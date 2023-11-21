@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 10:35:27 by juramos           #+#    #+#             */
-/*   Updated: 2023/11/21 12:55:35 by juramos          ###   ########.fr       */
+/*   Updated: 2023/11/21 13:51:02 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <stdarg.h>
 # include <stdio.h>
+# include "libft/libft.h"
 
 int	ft_printf(char const *format, ...);
 

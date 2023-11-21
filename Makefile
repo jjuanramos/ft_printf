@@ -6,7 +6,7 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 16:43:25 by juramos           #+#    #+#              #
-#    Updated: 2023/11/21 11:39:45 by juramos          ###   ########.fr        #
+#    Updated: 2023/11/21 12:54:36 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,8 +25,10 @@ all: $(NAME)
 $(NAME): $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
-%.o: $(LIBFT_PATH)/$(LIBFT) %.c
+%.o: libft %.c
 	$(CC) -c $(CFLAGS) -L$(LIBFT_PATH) $(LIBFT_FLAG) $(SRC)
+
+libft: $(LIBFT_PATH)/$(LIBFT)
 
 $(LIBFT_PATH)/$(LIBFT):
 	make -C $(LIBFT_PATH)

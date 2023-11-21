@@ -6,7 +6,7 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 16:43:25 by juramos           #+#    #+#              #
-#    Updated: 2023/11/21 11:01:19 by juramos          ###   ########.fr        #
+#    Updated: 2023/11/21 11:39:45 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,17 +15,21 @@ CC = gcc
 CFLAGS = -Wall -Werror -Wextra
 SRC = ft_printf.c
 LIBFT_PATH = libft
+LIBFT_FLAG = -lft
+LIBFT = libft.a
 
 OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
-	make -C $(LIBFT_PATH)
 
 $(NAME): $(OBJ)
-	ar rc $(NAME) $?
+	ar rc $(NAME) $(OBJ)
 
-%.o: %.c
-	$(CC) -c $(CFLAGS) $?
+%.o: $(LIBFT_PATH)/$(LIBFT) %.c
+	$(CC) -c $(CFLAGS) -L$(LIBFT_PATH) $(LIBFT_FLAG) $(SRC)
+
+$(LIBFT_PATH)/$(LIBFT):
+	make -C $(LIBFT_PATH)
 
 clean:
 	rm -f $(OBJ)
@@ -42,4 +46,3 @@ so:
 	gcc -nostartfiles -shared -o libftprintf.so $(OBJ)
 
 .PHONY: all clean fclean re so
-

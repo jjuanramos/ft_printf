@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:01:54 by juramos           #+#    #+#             */
-/*   Updated: 2023/11/27 11:29:48 by juramos          ###   ########.fr       */
+/*   Updated: 2023/11/27 13:05:02 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,31 @@ void	write_u(va_list args)
 void	write_s(va_list args)
 {
 	char	*value;
+	int		pos;
 
+	pos = 0;
 	value = va_arg(args, char *);
-	while (*value)
+	while (value[pos])
 	{
-		write(1, value, 1);
-		*value++;
+		write(1, &value[pos], 1);
+		pos++;
 	}
+}
+
+void	write_x(va_list args)
+{
+	int	value;
+
+	value = va_arg(args, int);
+	ft_putnbr_base_fd(value, "0123456789abcdef", 1);
+}
+
+void	write_X(va_list args)
+{
+	int	value;
+
+	value = va_arg(args, int);
+	ft_putnbr_base_fd(value, "0123456789ABCDEF", 1);
 }
 
 int	ft_printf(char const *format, ...)
@@ -68,6 +86,10 @@ int	ft_printf(char const *format, ...)
 				write_u(args);
 			else if (format[pos] == 's')
 				write_s(args);
+			else if (format[pos] == 'x')
+				write_x(args);
+			else if (format[pos] == 'X')
+				write_X(args);
 			else
 				write(1, "%", 1);
 		}
@@ -81,7 +103,7 @@ int	ft_printf(char const *format, ...)
 
 int	main(void)
 {
-	ft_printf("Hello %i, how you doing %c, %%, %u, %s,  %x\n", 10010, 'b', 53, "bye juan", -0xA);
-	printf("Hello %i, how you doing %c, %%, %u, %s,  %x %x\n", 10010, 'b', 45, "bye juan", -0xA, 0xA);
+	ft_printf("Hello %i, how you doing %c, %%, %u, %s, %X\n", 10010, 'b', 53, "bye juan", (unsigned char)(-0xC));
+	printf("Hello %i, how you doing %c, %%, %u, %s, %X\n", 10010, 'b', 45, "bye juan", (unsigned char)(-0xC));
 	return (0);
 }

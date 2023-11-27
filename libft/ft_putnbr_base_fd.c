@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 14:13:26 by juramos           #+#    #+#             */
-/*   Updated: 2023/11/27 12:55:57 by juramos          ###   ########.fr       */
+/*   Updated: 2023/11/27 13:00:19 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	ft_putnbr_base_fd(int n, char *base, int fd)
 		write(fd, "-", 1);
 		n_l *= -1;
 	}
-	if (n_l < ft_strlen(base))
+	if (n_l < (long)ft_strlen(base))
 		write(fd, &base[n_l], 1);
 	else
 	{

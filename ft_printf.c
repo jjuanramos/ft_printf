@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:01:54 by juramos           #+#    #+#             */
-/*   Updated: 2023/11/27 11:22:12 by juramos          ###   ########.fr       */
+/*   Updated: 2023/11/27 11:29:48 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ int	ft_printf(char const *format, ...)
 
 int	main(void)
 {
-	ft_printf("Hello %i, how you doing %c, %%, %u, %s\n", 10010, 'b', 53, "bye juan");
-	printf("Hello %i, how you doing %c, %%, %u, %s\n", 10010, 'b', 45, "bye juan");
+	ft_printf("Hello %i, how you doing %c, %%, %u, %s,  %x\n", 10010, 'b', 53, "bye juan", -0xA);
+	printf("Hello %i, how you doing %c, %%, %u, %s,  %x %x\n", 10010, 'b', 45, "bye juan", -0xA, 0xA);
 	return (0);
 }

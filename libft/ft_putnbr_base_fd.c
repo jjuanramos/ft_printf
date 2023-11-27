@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/18 14:13:26 by juramos           #+#    #+#             */
-/*   Updated: 2023/11/27 11:48:13 by juramos          ###   ########.fr       */
+/*   Updated: 2023/11/27 12:55:57 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,19 @@
 
 void	ft_putnbr_base_fd(int n, char *base, int fd)
 {
-	char	c;
-	long	helper;
+	long	n_l;
 
-	helper = (unsigned long)n;
-	if (helper < 0)
+	n_l = n;
+	if (n_l < 0)
 	{
 		write(fd, "-", 1);
-		ft_putnbr_base_fd(helper * -1, base, fd);
+		n_l *= -1;
 	}
-	else if (helper < ft_strlen(base))
-	{
-		c = base[helper];
-		write(fd, &c, 1);
-	}
+	if (n_l < ft_strlen(base))
+		write(fd, &base[n_l], 1);
 	else
 	{
-		ft_putnbr_base_fd(helper / ft_strlen(base), base, fd);
-		ft_putnbr_base_fd(helper % ft_strlen(base), base, fd);
+		ft_putnbr_base_fd(n_l / ft_strlen(base), base, fd);
+		ft_putnbr_base_fd(n_l % ft_strlen(base), base, fd);
 	}
-}
-
-int main(void)
-{
-	// ft_putnbr_base_fd(-2147483648, "0123456789", 1);
-	// printf("\n");
-	ft_putnbr_base_fd(0xA, "0123456789abcdef", 1);
-	printf("\n");
-	return (0);
 }

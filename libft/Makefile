@@ -6,7 +6,7 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 16:43:25 by juramos           #+#    #+#              #
-#    Updated: 2023/11/27 11:47:24 by juramos          ###   ########.fr        #
+#    Updated: 2023/11/27 12:56:50 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRC = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 	ft_calloc.c ft_substr.c ft_strjoin.c ft_strtrim.c \
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c \
 	ft_putnbr_fd.c ft_strmapi.c ft_striteri.c \
-	ft_split.c ft_itoa.c
+	ft_split.c ft_itoa.c ft_putnbr_base_fd.c
 BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
 

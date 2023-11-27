@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:01:54 by juramos           #+#    #+#             */
-/*   Updated: 2023/11/27 13:33:33 by juramos          ###   ########.fr       */
+/*   Updated: 2023/11/27 13:42:53 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,6 +66,20 @@ void	write_X(va_list args)
 	ft_putnbr_base_fd(value, "0123456789ABCDEF", 1);
 }
 
+void	write_ptr(va_list args)
+{
+	unsigned int	value;
+
+	value = (unsigned int)va_arg(args, unsigned int);
+	if (!value)
+		write(1, "(nil)", 5);
+	else
+	{
+		write(1, "0x", 2);
+		ft_putnbr_base_fd(value, "0123456789abcdef", 1);
+	}
+}
+
 int	ft_printf(char const *format, ...)
 {
 	va_list	args;
@@ -90,6 +104,8 @@ int	ft_printf(char const *format, ...)
 				write_x(args);
 			else if (format[pos] == 'X')
 				write_X(args);
+			else if (format[pos] == 'p')
+				write_ptr(args);
 			else
 				write(1, "%", 1);
 		}
@@ -103,7 +119,10 @@ int	ft_printf(char const *format, ...)
 
 int	main(void)
 {
-	ft_printf("Hello %i, how you doing %c, %%, %u, %s, %x\n", 10010, 'b', 53, "bye juan", (-0xC));
-	printf("Hello %i, how you doing %c, %%, %u, %s, %x\n", 10010, 'b', 45, "bye juan", (-0xC));
+	char	c;
+
+	c = 5;
+	ft_printf("Hello %i, how you doing %c, %%, %u, %s, %x %p\n", 10010, 'b', 53, "bye juan", (-0xC), &c);
+	printf("Hello %i, how you doing %c, %%, %u, %s, %x %p\n", 10010, 'b', 45, "bye juan", (-0xC), &c);
 	return (0);
 }

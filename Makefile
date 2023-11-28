@@ -6,7 +6,7 @@
 #    By: juramos <juramos@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 16:43:25 by juramos           #+#    #+#              #
-#    Updated: 2023/11/28 12:27:10 by juramos          ###   ########.fr        #
+#    Updated: 2023/11/28 12:45:03 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,11 +22,11 @@ OBJ = $(SRC:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): libft $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
 %.o: libft %.c
-	$(CC) -c $(CFLAGS) -L$(LIBFT_PATH) $(LIBFT_FLAG) $(SRC)
+	$(CC) -c $(CFLAGS) -I$(LIBFT_PATH) $< -o $@
 
 libft: $(LIBFT_PATH)/$(LIBFT)
 
@@ -43,8 +43,8 @@ fclean: clean
 
 re: fclean all
 
-so:
-	$(CC) -nostartfiles -fPIC $(CFLAGS) $(SRC)
-	gcc -nostartfiles -shared -o libftprintf.so $(OBJ)
+so: $(OBJ)
+	$(CC) -nostartfiles -fPIC $(CFLAGS) -I$(LIBFT_PATH) -c $(SRC)
+	$(CC) -nostartfiles -shared -o libftprintf.so $(OBJ) -L$(LIBFT_PATH) $(LIBFT_FLAG)
 
 .PHONY: all clean fclean re so libft

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: juramos <juramos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:01:54 by juramos           #+#    #+#             */
-/*   Updated: 2023/11/27 13:42:53 by juramos          ###   ########.fr       */
+/*   Updated: 2023/11/28 11:49:22 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,17 +66,22 @@ void	write_X(va_list args)
 	ft_putnbr_base_fd(value, "0123456789ABCDEF", 1);
 }
 
-void	write_ptr(va_list args)
+int	write_ptr(va_list args)
 {
 	unsigned int	value;
+	int				count;
 
 	value = (unsigned int)va_arg(args, unsigned int);
 	if (!value)
+	{
 		write(1, "(nil)", 5);
+		return (5);
+	}
 	else
 	{
+		count = 2;
 		write(1, "0x", 2);
-		ft_putnbr_base_fd(value, "0123456789abcdef", 1);
+		(value, "0123456789abcdef", 1);
 	}
 }
 
@@ -84,8 +89,10 @@ int	ft_printf(char const *format, ...)
 {
 	va_list	args;
 	int		pos;
+	int		count;
 
 	pos = 0;
+	count = 0;
 	va_start(args, format);
 	while (format[pos])
 	{
@@ -93,36 +100,38 @@ int	ft_printf(char const *format, ...)
 		{
 			pos++;
 			if (format[pos] == 'd' || format[pos] == 'i')
-				write_d(args);
+				count += write_d(args);
 			else if (format[pos] == 'c')
-				write_c(args);
+				count += write_c(args);
 			else if (format[pos] == 'u')
-				write_u(args);
+				count += write_u(args);
 			else if (format[pos] == 's')
-				write_s(args);
+				count += write_s(args);
 			else if (format[pos] == 'x')
-				write_x(args);
+				count += write_x(args);
 			else if (format[pos] == 'X')
-				write_X(args);
+				count += write_X(args);
 			else if (format[pos] == 'p')
-				write_ptr(args);
+				count += write_ptr(args);
 			else
-				write(1, "%", 1);
+				count += write(1, "%", 1);
 		}
 		else
-			write(1, &format[pos], 1);
+			count += write(1, &format[pos], 1);
 		pos++;
 	}
 	va_end(args);
-	return (0);
+	return (count);
 }
 
 int	main(void)
 {
 	char	c;
+	int		val;
 
 	c = 5;
 	ft_printf("Hello %i, how you doing %c, %%, %u, %s, %x %p\n", 10010, 'b', 53, "bye juan", (-0xC), &c);
-	printf("Hello %i, how you doing %c, %%, %u, %s, %x %p\n", 10010, 'b', 45, "bye juan", (-0xC), &c);
+	val = printf("Hello %i, how you doing %c, %%, %u, %s, %x\n", 10010, 'b', 45, "bye juan", (-0xC));
+	printf("val is %d.\n", val);
 	return (0);
 }

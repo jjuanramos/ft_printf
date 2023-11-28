@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:01:54 by juramos           #+#    #+#             */
-/*   Updated: 2023/11/28 12:35:43 by juramos          ###   ########.fr       */
+/*   Updated: 2023/11/28 12:47:28 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int	ft_printf(char const *format, ...)
 
 int	main(void)
 {
-	char	c;
 	int		val_p;
 	int		val_ft;
 

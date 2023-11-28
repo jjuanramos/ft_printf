@@ -6,7 +6,7 @@
 #    By: juramos <juramos@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 16:43:25 by juramos           #+#    #+#              #
-#    Updated: 2023/11/28 12:45:03 by juramos          ###   ########.fr        #
+#    Updated: 2023/11/28 12:47:12 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ all: $(NAME)
 $(NAME): libft $(OBJ)
 	ar rc $(NAME) $(OBJ)
 
-%.o: libft %.c
+%.o: libft/%.c %.c
 	$(CC) -c $(CFLAGS) -I$(LIBFT_PATH) $< -o $@
 
 libft: $(LIBFT_PATH)/$(LIBFT)

@@ -1,23 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_write_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juramos <juramos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 10:35:27 by juramos           #+#    #+#             */
-/*   Updated: 2023/11/28 12:33:24 by juramos          ###   ########.fr       */
+/*   Created: 2023/11/28 11:54:21 by juramos           #+#    #+#             */
+/*   Updated: 2023/11/28 11:55:45 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+int	write_ptr(va_list args)
+{
+	unsigned int	value;
+	int				count;
 
-# include <stdarg.h>
-# include <stdio.h>
-# include "libft/libft.h"
-
-int	ft_printf(char const *format, ...);
-int	ft_write_s(va_list args);
-
-#endif
+	value = (unsigned int)va_arg(args, unsigned int);
+	if (!value)
+	{
+		write(1, "(nil)", 5);
+		return (5);
+	}
+	else
+	{
+		count = 2;
+		write(1, "0x", 2);
+		ft_putnbr_base_fd(value, "0123456789abcdef", 1);
+	}
+}

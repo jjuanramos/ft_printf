@@ -1,23 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_write_s.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juramos <juramos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 10:35:27 by juramos           #+#    #+#             */
-/*   Updated: 2023/11/28 12:33:24 by juramos          ###   ########.fr       */
+/*   Created: 2023/11/28 11:52:05 by juramos           #+#    #+#             */
+/*   Updated: 2023/11/28 12:33:09 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+size_t	ft_write_s(va_list args)
+{
+	char	*value;
+	size_t	pos;
 
-# include <stdarg.h>
-# include <stdio.h>
-# include "libft/libft.h"
-
-int	ft_printf(char const *format, ...);
-int	ft_write_s(va_list args);
-
-#endif
+	pos = 0;
+	value = va_arg(args, char *);
+	while (value[pos])
+	{
+		write(1, &value[pos], 1);
+		pos++;
+	}
+	return (pos);
+}

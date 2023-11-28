@@ -6,14 +6,14 @@
 #    By: juramos <juramos@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 16:43:25 by juramos           #+#    #+#              #
-#    Updated: 2023/11/28 11:35:15 by juramos          ###   ########.fr        #
+#    Updated: 2023/11/28 12:27:10 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
-SRC = ft_printf.c
+SRC = ft_printf.c ft_write_s.c
 LIBFT_PATH = libft
 LIBFT_FLAG = -lft
 LIBFT = libft.a

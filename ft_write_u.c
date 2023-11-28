@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_write_u.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juramos <juramos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 10:35:27 by juramos           #+#    #+#             */
-/*   Updated: 2023/11/28 12:33:24 by juramos          ###   ########.fr       */
+/*   Created: 2023/11/28 11:51:48 by juramos           #+#    #+#             */
+/*   Updated: 2023/11/28 11:51:49 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+void	write_u(va_list args)
+{
+	unsigned int	value;
 
-# include <stdarg.h>
-# include <stdio.h>
-# include "libft/libft.h"
-
-int	ft_printf(char const *format, ...);
-int	ft_write_s(va_list args);
-
-#endif
+	value = (unsigned int)va_arg(args, int);
+	ft_putnbr_fd(value, 1);
+}

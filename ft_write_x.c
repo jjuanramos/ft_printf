@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_write_x.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: juramos <juramos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/21 10:35:27 by juramos           #+#    #+#             */
-/*   Updated: 2023/11/28 12:33:24 by juramos          ###   ########.fr       */
+/*   Created: 2023/11/28 11:52:28 by juramos           #+#    #+#             */
+/*   Updated: 2023/11/28 11:54:31 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+void	write_x(va_list args)
+{
+	unsigned int	value;
 
-# include <stdarg.h>
-# include <stdio.h>
-# include "libft/libft.h"
+	value = (unsigned int)va_arg(args, unsigned int);
+	ft_putnbr_base_fd(value, "0123456789abcdef", 1);
+}
 
-int	ft_printf(char const *format, ...);
-int	ft_write_s(va_list args);
+void	write_X(va_list args)
+{
+	unsigned int	value;
 
-#endif
+	value = (unsigned int)va_arg(args, unsigned int);
+	ft_putnbr_base_fd(value, "0123456789ABCDEF", 1);
+}

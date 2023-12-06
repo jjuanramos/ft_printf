@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:50:29 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/06 11:56:57 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/06 12:32:34 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,11 @@ static size_t	putnbr_base_with_count_fd(int n, char *base, int fd)
 	i = 0;
 	if (n_l < 0)
 	{
-		write(fd, "-", 1);
+		i += write(fd, "-", 1);
 		n_l *= -1;
-		i++;
 	}
 	if (n_l < (long)ft_strlen(base))
-	{
-		write(fd, &base[n_l], 1);
-		i++;
-	}
+		i += write(fd, &base[n_l], 1);
 	else
 	{
 		i += putnbr_base_with_count_fd(n_l / ft_strlen(base), base, fd);

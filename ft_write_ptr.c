@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:54:21 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/06 11:53:53 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/06 12:25:49 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,8 +46,8 @@ size_t	ft_write_ptr(va_list args)
 	value = (unsigned int)va_arg(args, unsigned int);
 	if (!value)
 	{
-		write(1, "(nil)", 5);
-		return (5);
+		write(1, "0x0", 3);
+		return (3);
 	}
 	else
 	{

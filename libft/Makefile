@@ -6,7 +6,7 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 16:43:25 by juramos           #+#    #+#              #
-#    Updated: 2023/12/06 13:14:36 by juramos          ###   ########.fr        #
+#    Updated: 2023/12/06 13:25:43 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,6 +28,18 @@ BONUS_OBJ = $(BONUS_SRC:.c=.o)
 OBJ = $(SRC:.c=.o)
 MAKEFLAGS += --no-print-directory
 .SILENT:
+
+# Colors
+DEF_COLOR = \033[0;39m
+GRAY = \033[0;90m
+RED = \033[0;91m
+GREEN = \033[0;92m
+YELLOW = \033[0;93m
+BLUE = \033[0;94m
+MAGENTA = \033[0;95m
+CYAN = \033[0;96m
+WHITE = \033[0;97m
+
 all: $(NAME)
 
 bonus: $(OBJ) $(BONUS_OBJ)
@@ -35,6 +47,7 @@ bonus: $(OBJ) $(BONUS_OBJ)
 
 $(NAME): $(OBJ)
 	@ar rc $(NAME) $?
+	@echo "$(YELLOW)libft compiled!$(DEF_COLOR)"
 
 %.o: %.c
 	@$(CC) -c $(CFLAGS) $?

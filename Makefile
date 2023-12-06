@@ -6,7 +6,7 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 16:43:25 by juramos           #+#    #+#              #
-#    Updated: 2023/12/06 13:14:42 by juramos          ###   ########.fr        #
+#    Updated: 2023/12/06 13:25:10 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,6 @@ MAKEFLAGS += --no-print-directory
 # LINK_FLAGS = -L$(LIBFT_PATH) $(LIBFT_FLAG)
 
 # Colors
-
 DEF_COLOR = \033[0;39m
 GRAY = \033[0;90m
 RED = \033[0;91m
@@ -38,15 +37,15 @@ OBJ = $(SRC:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJ)
+	@make -C $(LIBFT_PATH)
 	@ar rc $(NAME) $(OBJ)
 	@echo "$(GREEN)ft_printf compiled!$(DEF_COLOR)"
 
 %.o: %.c
-	@make -C $(LIBFT_PATH) all
 	@$(CC) -c $(CFLAGS) $< -o $@
 
 libft:
-	@make -C $(LIBFT_PATH) all
+	@make -C $(LIBFT_PATH)
 
 clean:
 	@rm -f $(OBJ)

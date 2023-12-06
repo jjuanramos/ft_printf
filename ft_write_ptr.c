@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_write_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juramos <juramos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:54:21 by juramos           #+#    #+#             */
-/*   Updated: 2023/11/28 11:55:45 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/06 10:22:09 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	write_ptr(va_list args)
+#include "ft_printf.h"
+
+size_t	ft_write_ptr(va_list args)
 {
 	unsigned int	value;
 	int				count;

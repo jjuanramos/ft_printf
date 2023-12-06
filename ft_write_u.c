@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_write_u.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juramos <juramos@student.42.fr>            +#+  +:+       +#+        */
+/*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:51:48 by juramos           #+#    #+#             */
-/*   Updated: 2023/11/28 11:51:49 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/06 10:22:31 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	write_u(va_list args)
+#include "ft_printf.h"
+
+size_t	write_u(va_list args)
 {
 	unsigned int	value;
 

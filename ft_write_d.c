@@ -6,13 +6,13 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:50:29 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/06 10:44:04 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/06 11:56:57 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t	putnbr_base_with_count_fd(int n, char *base, int fd)
+static size_t	putnbr_base_with_count_fd(int n, char *base, int fd)
 {
 	long	n_l;
 	size_t	i;
@@ -25,7 +25,8 @@ size_t	putnbr_base_with_count_fd(int n, char *base, int fd)
 		n_l *= -1;
 		i++;
 	}
-	if (n_l < (long)ft_strlen(base)){
+	if (n_l < (long)ft_strlen(base))
+	{
 		write(fd, &base[n_l], 1);
 		i++;
 	}
@@ -36,7 +37,6 @@ size_t	putnbr_base_with_count_fd(int n, char *base, int fd)
 	}
 	return (i);
 }
-
 
 size_t	ft_write_d(va_list args)
 {

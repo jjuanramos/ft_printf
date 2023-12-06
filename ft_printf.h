@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 10:35:27 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/06 10:17:13 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/06 12:01:30 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ size_t	ft_write_s(va_list args);
 size_t	ft_write_c(va_list args);
 size_t	ft_write_d(va_list args);
 size_t	ft_write_x(va_list args);
+size_t	ft_write_x_upper(va_list args);
 size_t	ft_write_u(va_list args);
 size_t	ft_write_ptr(va_list args);
 

@@ -6,7 +6,7 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 16:43:25 by juramos           #+#    #+#              #
-#    Updated: 2023/12/06 12:43:36 by juramos          ###   ########.fr        #
+#    Updated: 2023/12/06 13:01:30 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,6 +65,6 @@ so: $(OBJ)
 	$(CC) -nostartfiles -shared -o libftprintf.so $(OBJ) $(LINK_FLAGS)
 
 norm:
-	@norminette $(SRC) include $(LIBFT_PATH) | grep -v Norme -B1 || true
+	@norminette $(SRC) $(LIBFT_PATH) | grep -v Norme -B1 || true
 
 .PHONY: all clean fclean re so libft norm

@@ -6,7 +6,7 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 16:43:25 by juramos           #+#    #+#              #
-#    Updated: 2023/12/06 13:01:30 by juramos          ###   ########.fr        #
+#    Updated: 2023/12/06 13:14:42 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,8 @@ SRC = ft_printf.c ft_write_s.c ft_write_d.c ft_write_c.c \
 	ft_write_ptr.c ft_write_u.c ft_write_x.c
 LIBFT_PATH = ./libft
 LIBFT_FLAG = -lft
+MAKEFLAGS += --no-print-directory
+.SILENT:
 # LINK_FLAGS = -L$(LIBFT_PATH) $(LIBFT_FLAG)
 
 # Colors

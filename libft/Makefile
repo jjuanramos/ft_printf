@@ -6,7 +6,7 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 16:43:25 by juramos           #+#    #+#              #
-#    Updated: 2023/12/06 12:41:19 by juramos          ###   ########.fr        #
+#    Updated: 2023/12/06 13:14:36 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,11 +24,10 @@ SRC = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 	ft_split.c ft_itoa.c ft_putnbr_base_fd.c
 BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c \
 	ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c
-
 BONUS_OBJ = $(BONUS_SRC:.c=.o)
-
 OBJ = $(SRC:.c=.o)
-
+MAKEFLAGS += --no-print-directory
+.SILENT:
 all: $(NAME)
 
 bonus: $(OBJ) $(BONUS_OBJ)

@@ -6,13 +6,14 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 16:43:25 by juramos           #+#    #+#              #
-#    Updated: 2023/12/06 13:25:43 by juramos          ###   ########.fr        #
+#    Updated: 2023/12/07 10:59:15 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+INCLUDE = ../include
+CFLAGS = -Wall -Werror -Wextra -I
 SRC = ft_isalnum.c ft_isalpha.c ft_isascii.c ft_isdigit.c \
 	ft_isprint.c ft_toupper.c ft_tolower.c ft_strlen.c \
 	ft_atoi.c ft_strlcpy.c ft_strlcat.c ft_strchr.c \
@@ -46,11 +47,11 @@ bonus: $(OBJ) $(BONUS_OBJ)
 	@ar rc $(NAME) $?
 
 $(NAME): $(OBJ)
-	@ar rc $(NAME) $?
+	@ar rcs $(NAME) $?
 	@echo "$(YELLOW)libft compiled!$(DEF_COLOR)"
 
 %.o: %.c
-	@$(CC) -c $(CFLAGS) $?
+	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 
 clean:
 	@rm -f $(OBJ) $(BONUS_OBJ)

@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:01:54 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/07 09:57:46 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/07 10:24:59 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int	ft_printf(char const *format, ...)
 	return (count);
 }
 
+/*
 int	main(void)
 {
 	int		val_s_p;
@@ -93,3 +94,4 @@ int	main(void)
 	printf("val_ptr_p is %i, val_ptr_ft is %i.\n", val_ptr_p, val_ptr_ft);
 	return (0);
 }
+*/

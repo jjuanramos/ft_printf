@@ -6,11 +6,12 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 10:01:49 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/07 10:02:01 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/07 10:47:44 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 size_t	putnbr_base_with_count_fd(int n, char *base, int fd)
 {

@@ -6,11 +6,12 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:54:21 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/07 10:00:27 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/07 10:47:56 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
 size_t	ft_write_ptr(va_list args)
 {

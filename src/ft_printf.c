@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:01:54 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/07 10:47:22 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/07 11:41:21 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ int	ft_printf(char const *format, ...)
 		if (format[pos] == '%')
 		{
 			pos++;
-			count += route_and_write(format[pos], args);
+			if (pos < ft_strlen(format))
+				count += route_and_write(format[pos], args);
 		}
 		else
 			count += write(1, &format[pos], 1);
@@ -58,7 +59,6 @@ int	ft_printf(char const *format, ...)
 	va_end(args);
 	return (count);
 }
-
 /*
 int	main(void)
 {
@@ -93,6 +93,8 @@ int	main(void)
 	val_ptr_ft = ft_printf("Hello ft: %p\n", (void *)&val_s_ft);
 	val_ptr_p = printf("Hello  p: %p\n", (void *)&val_s_ft);
 	printf("val_ptr_p is %i, val_ptr_ft is %i.\n", val_ptr_p, val_ptr_ft);
+	ft_printf("ft: %5% \n");
+	printf("p : %5% \n");
 	return (0);
 }
 */

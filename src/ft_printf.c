@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:01:54 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/11 11:35:02 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/11 11:47:12 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,35 +68,35 @@ int	main(void)
 	printf("std printf:\n\n");
 	printf("1. Hello\n");
 	// seg. fault printf("2. Hello %s.\n", 5);
-	printf("3. Hello %s.\n", NULL);
+	printf("3. Hello %s.\n", "\0");
 	printf("4. Hello %s.\n", "juan");
 	printf("5. Hello %s %s.\n", "juan", "ramos");
-	printf("6. Hello %s%\n", "juan");
+	// printf("6. Hello %s%\n", "juan");
 	printf("7. Hello %s%%\n", "juan");
 	printf("-----------------------\n");
 	ft_printf("ft_printf:\n\n");
 	ft_printf("1. Hello\n");
 	// seg. fault ft_printf("2. Hello %s.\n", 5);
-	ft_printf("3. Hello %s.\n", NULL);
+	ft_printf("3. Hello %s.\n", "\0");
 	ft_printf("4. Hello %s.\n", "juan");
 	ft_printf("5. Hello %s %s.\n", "juan", "ramos");
-	ft_printf("6. Hello %s%\n", "juan"); // is this expected behavior?
+	// ft_printf("6. Hello %s%\n", "juan"); // is this expected behavior? -> fails with flags
 	ft_printf("7. Hello %s%%\n", "juan");
 	ft_printf("\n-----------------------\n\n");
 	printf("Testing character input...\n");
 	printf("-----------------------\n");
 	printf("std printf:\n\n");
-	printf("1. Hello %c.\n", NULL);
+	printf("1. Hello %c.\n", '\0');
 	printf("2. Hello %c.\n", 'c');
-	printf("3. Hello %c %c.\n", 'c', "x");
-	printf("4. Hello %c%\n", 'c');
+	printf("3. Hello %c %c.\n", 'c', 'x');
+	// printf("4. Hello %c%\n", 'c');
 	printf("5. Hello %c%%\n", 'j');
 	printf("-----------------------\n");
 	ft_printf("ft_printf:\n\n");
-	ft_printf("1. Hello %c.\n", NULL);
+	ft_printf("1. Hello %c.\n", '\0');
 	ft_printf("2. Hello %c.\n", 'c');
-	ft_printf("3. Hello %c %c.\n", 'c', "x");
-	ft_printf("4. Hello %c%\n", 'c');
+	ft_printf("3. Hello %c %c.\n", 'c', 'x');
+	// ft_printf("4. Hello %c%\n", 'c');
 	ft_printf("5. Hello %c%%\n", 'j');
 }
 

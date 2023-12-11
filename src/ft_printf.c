@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:01:54 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/07 11:41:21 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/11 10:59:15 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,30 @@ int	ft_printf(char const *format, ...)
 	va_end(args);
 	return (count);
 }
+
+int	main(void)
+{
+
+	printf("Testing string input...\n");
+	printf("-----------------------\n");
+	printf("std printf:\n\n");
+	printf("1. Hello\n");
+	// seg. fault printf("2. Hello %s.\n", 5);
+	printf("3. Hello %s.\n", NULL);
+	printf("4. Hello %s.\n", "juan");
+	printf("5. Hello %s %s.\n", "juan", "ramos");
+	printf("4. Hello %s% .\n", "juan");
+	printf("-----------------------\n");
+	ft_printf("ft_printf:\n\n");
+	ft_printf("1. Hello\n");
+	// seg. fault ft_printf("2. Hello %s.\n", 5);
+	ft_printf("3. Hello %s.\n", NULL);
+	ft_printf("4. Hello %s.\n", "juan");
+	ft_printf("5. Hello %s %s.\n", "juan", "ramos");
+	ft_printf("4. Hello %s% .\n", "juan");
+	ft_printf("-----------------------\n");
+}
+
 /*
 int	main(void)
 {

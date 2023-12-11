@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:01:54 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/11 10:59:15 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/11 11:28:06 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,8 @@ int	main(void)
 	printf("3. Hello %s.\n", NULL);
 	printf("4. Hello %s.\n", "juan");
 	printf("5. Hello %s %s.\n", "juan", "ramos");
-	printf("4. Hello %s% .\n", "juan");
+	printf("6. Hello %s%\n", "juan");
+	printf("7. Hello %s%%\n", "juan");
 	printf("-----------------------\n");
 	ft_printf("ft_printf:\n\n");
 	ft_printf("1. Hello\n");
@@ -79,7 +80,10 @@ int	main(void)
 	ft_printf("3. Hello %s.\n", NULL);
 	ft_printf("4. Hello %s.\n", "juan");
 	ft_printf("5. Hello %s %s.\n", "juan", "ramos");
-	ft_printf("4. Hello %s% .\n", "juan");
+	ft_printf("6. Hello %s%\n", "juan"); // is this expected behavior?
+	ft_printf("7. Hello %s%%\n", "juan");
+	ft_printf("-----------------------\n");
+	ft_printf("-----------------------\n");
 	ft_printf("-----------------------\n");
 }
 

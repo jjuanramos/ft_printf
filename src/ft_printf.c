@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:01:54 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/11 11:47:12 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/11 11:49:19 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ size_t	route_and_write(char type, va_list args)
 		count += ft_write_u(args);
 	else if (type == 'x')
 		count += ft_write_x(args);
+	else if (type == 'X')
+		count += ft_write_x_upper(args);
 	else if (type == 'p')
 		count += ft_write_ptr(args);
 	else
@@ -60,6 +62,7 @@ int	ft_printf(char const *format, ...)
 	return (count);
 }
 
+/*
 int	main(void)
 {
 
@@ -99,6 +102,7 @@ int	main(void)
 	// ft_printf("4. Hello %c%\n", 'c');
 	ft_printf("5. Hello %c%%\n", 'j');
 }
+*/
 
 /*
 int	main(void)

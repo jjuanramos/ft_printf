@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_write_d.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: juramos <juramos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:50:29 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/07 10:00:58 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/12 11:22:42 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ size_t	ft_write_d(va_list args)
 	size_t	i;
 
 	value = va_arg(args, int);
-	i = putnbr_base_with_count_fd(value, "0123456789", 1);
+	i = putnbr_int_with_count_fd(value, "0123456789", 1);
 	return (i);
 }

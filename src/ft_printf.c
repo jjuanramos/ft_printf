@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:01:54 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/12 10:55:45 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/12 11:17:04 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,17 +65,19 @@ int	ft_printf(char const *format, ...)
 /*
 int	main(void)
 {
-	printf("Testing u input...\n");
+	printf("Testing p input...\n");
 	printf("-----------------------\n");
 	printf("std printf:\n\n");
-	printf("1. Hello %u.\n", -10);
-	printf("4. Hello %u.\n", -200000);
-	printf("5. Hello %u %u.\n", 2 , -6000023);
+	printf("1: %p.\n", (void *)-14523);
+	printf("2: 0x%p-.\n", (void *)0xFFFFFFFFUL);
+	printf("3: %pp%p%p.\n", (void *)2147483647 + 423856,
+		(void *)0, (void *)2147483647);
 	printf("-----------------------\n");
 	ft_printf("ft_printf:\n\n");
-	ft_printf("1. Hello %u.\n", -10);
-	ft_printf("4. Hello %u.\n", -200000);
-	ft_printf("5. Hello %u %u.\n", 2 , -6000023);
+	ft_printf("1: %p.\n", (void *)-14523);
+	ft_printf("2: 0x%p-.\n", (void *)0xFFFFFFFFUL);
+	ft_printf("3: %pp%p%p.\n", (void *)2147483647 + 423856, (void *)0,
+		(void *)2147483647);
 	printf("-----------------------\n");
 	printf("-----------------------\n");
 	printf("-----------------------\n");
@@ -112,7 +114,6 @@ int	main(void)
 	// ft_printf("5. Hello %c%%\n", 'j');
 }
 */
-
 /*
 int	main(void)
 {

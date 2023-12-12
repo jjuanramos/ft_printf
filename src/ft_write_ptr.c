@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_write_ptr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: juramos <juramos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 11:54:21 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/07 10:47:56 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/12 11:12:31 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 size_t	ft_write_ptr(va_list args)
 {
-	unsigned long int	value;
+	unsigned long		value;
 	int					count;
 
-	value = (unsigned long int)va_arg(args, void *);
+	value = (unsigned long)va_arg(args, void *);
 	count = 0;
 	if (!value)
 		count += write(1, "0x0", 3);

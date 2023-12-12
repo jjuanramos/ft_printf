@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:01:54 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/12 11:17:04 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/12 11:34:11 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,7 @@ int	ft_printf(char const *format, ...)
 		if (format[pos] == '%')
 		{
 			pos++;
-			if (pos < ft_strlen(format))
-				count += route_and_write(format[pos], args);
+			count += route_and_write(format[pos], args);
 		}
 		else
 			count += write(1, &format[pos], 1);

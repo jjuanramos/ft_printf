@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:01:54 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/12 11:34:11 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/12 12:01:14 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,19 @@ int	ft_printf(char const *format, ...)
 /*
 int	main(void)
 {
+	int		val_s_p;
+	int		val_s_ft;
+	int		val_c_p;
+	int		val_c_ft;
+	int		val_i_p;
+	int		val_i_ft;
+	int		val_u_p;
+	int		val_u_ft;
+	int		val_x_p;
+	int		val_x_ft;
+	int		val_ptr_p;
+	int		val_ptr_ft;
+
 	printf("Testing p input...\n");
 	printf("-----------------------\n");
 	printf("std printf:\n\n");
@@ -80,54 +93,37 @@ int	main(void)
 	printf("-----------------------\n");
 	printf("-----------------------\n");
 	printf("-----------------------\n");
-	// printf("std printf:\n\n");
-	// printf("3. Hello %s.\n", "\0");
-	// printf("4. Hello %s.\n", "juan");
-	// printf("5. Hello %s %s.\n", "juan", "ramos");
-	// // printf("6. Hello %s%\n", "juan");
-	// printf("7. Hello %s%%\n", "juan");
-	// printf("-----------------------\n");
-	// ft_printf("ft_printf:\n\n");
-	// ft_printf("1. Hello\n");
-	// // seg. fault ft_printf("2. Hello %s.\n", 5);
-	// ft_printf("3. Hello %s.\n", "\0");
-	// ft_printf("4. Hello %s.\n", "juan");
-	// ft_printf("5. Hello %s %s.\n", "juan", "ramos");
-	// // ft_printf("6. Hello %s%\n", "juan");
-	// ft_printf("7. Hello %s%%\n", "juan");
-	// ft_printf("\n-----------------------\n\n");
-	// printf("Testing character input...\n");
-	// printf("-----------------------\n");
-	// printf("std printf:\n\n");
-	// printf("1. Hello %c.\n", '\0');
-	// printf("2. Hello %c.\n", 'c');
-	// printf("3. Hello %c %c.\n", 'c', 'x');
-	// // printf("4. Hello %c%\n", 'c');
-	// printf("5. Hello %c%%\n", 'j');
-	// printf("-----------------------\n");
-	// ft_printf("ft_printf:\n\n");
-	// ft_printf("1. Hello %c.\n", '\0');
-	// ft_printf("2. Hello %c.\n", 'c');
-	// ft_printf("3. Hello %c %c.\n", 'c', 'x');
-	// // ft_printf("4. Hello %c%\n", 'c');
-	// ft_printf("5. Hello %c%%\n", 'j');
-}
-*/
-/*
-int	main(void)
-{
-	int		val_s_p;
-	int		val_s_ft;
-	int		val_c_p;
-	int		val_c_ft;
-	int		val_i_p;
-	int		val_i_ft;
-	int		val_u_p;
-	int		val_u_ft;
-	int		val_x_p;
-	int		val_x_ft;
-	int		val_ptr_p;
-	int		val_ptr_ft;
+	printf("std printf:\n\n");
+	printf("3. Hello %s.\n", "\0");
+	printf("4. Hello %s.\n", "juan");
+	printf("5. Hello %s %s.\n", "juan", "ramos");
+	// printf("6. Hello %s%\n", "juan");
+	printf("7. Hello %s%%\n", "juan");
+	printf("-----------------------\n");
+	ft_printf("ft_printf:\n\n");
+	ft_printf("1. Hello\n");
+	// seg. fault ft_printf("2. Hello %s.\n", 5);
+	ft_printf("3. Hello %s.\n", "\0");
+	ft_printf("4. Hello %s.\n", "juan");
+	ft_printf("5. Hello %s %s.\n", "juan", "ramos");
+	// ft_printf("6. Hello %s%\n", "juan");
+	ft_printf("7. Hello %s%%\n", "juan");
+	ft_printf("\n-----------------------\n\n");
+	printf("Testing character input...\n");
+	printf("-----------------------\n");
+	printf("std printf:\n\n");
+	printf("1. Hello %c.\n", '\0');
+	printf("2. Hello %c.\n", 'c');
+	printf("3. Hello %c %c.\n", 'c', 'x');
+	// printf("4. Hello %c%\n", 'c');
+	printf("5. Hello %c%%\n", 'j');
+	printf("-----------------------\n");
+	ft_printf("ft_printf:\n\n");
+	ft_printf("1. Hello %c.\n", '\0');
+	ft_printf("2. Hello %c.\n", 'c');
+	ft_printf("3. Hello %c %c.\n", 'c', 'x');
+	// ft_printf("4. Hello %c%\n", 'c');
+	ft_printf("5. Hello %c%%\n", 'j');
 
 	val_s_ft = ft_printf("Hello ft: %s\n", "bye juan");
 	val_s_p = printf("Hello  p: %s\n", "bye juan");
@@ -147,8 +143,6 @@ int	main(void)
 	val_ptr_ft = ft_printf("Hello ft: %p\n", (void *)&val_s_ft);
 	val_ptr_p = printf("Hello  p: %p\n", (void *)&val_s_ft);
 	printf("val_ptr_p is %i, val_ptr_ft is %i.\n", val_ptr_p, val_ptr_ft);
-	ft_printf("ft: %5% \n");
-	printf("p : %5% \n");
 	return (0);
 }
 */

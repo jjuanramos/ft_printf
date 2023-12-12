@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: juramos <juramos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:01:54 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/12 10:35:29 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/12 10:55:45 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,42 +65,51 @@ int	ft_printf(char const *format, ...)
 /*
 int	main(void)
 {
-
-	printf("Testing string input...\n");
+	printf("Testing u input...\n");
 	printf("-----------------------\n");
 	printf("std printf:\n\n");
-	printf("1. Hello\n");
-	// seg. fault printf("2. Hello %s.\n", 5);
-	printf("3. Hello %s.\n", "\0");
-	printf("4. Hello %s.\n", "juan");
-	printf("5. Hello %s %s.\n", "juan", "ramos");
-	// printf("6. Hello %s%\n", "juan");
-	printf("7. Hello %s%%\n", "juan");
+	printf("1. Hello %u.\n", -10);
+	printf("4. Hello %u.\n", -200000);
+	printf("5. Hello %u %u.\n", 2 , -6000023);
 	printf("-----------------------\n");
 	ft_printf("ft_printf:\n\n");
-	ft_printf("1. Hello\n");
-	// seg. fault ft_printf("2. Hello %s.\n", 5);
-	ft_printf("3. Hello %s.\n", "\0");
-	ft_printf("4. Hello %s.\n", "juan");
-	ft_printf("5. Hello %s %s.\n", "juan", "ramos");
-	// ft_printf("6. Hello %s%\n", "juan");
-	ft_printf("7. Hello %s%%\n", "juan");
-	ft_printf("\n-----------------------\n\n");
-	printf("Testing character input...\n");
+	ft_printf("1. Hello %u.\n", -10);
+	ft_printf("4. Hello %u.\n", -200000);
+	ft_printf("5. Hello %u %u.\n", 2 , -6000023);
 	printf("-----------------------\n");
-	printf("std printf:\n\n");
-	printf("1. Hello %c.\n", '\0');
-	printf("2. Hello %c.\n", 'c');
-	printf("3. Hello %c %c.\n", 'c', 'x');
-	// printf("4. Hello %c%\n", 'c');
-	printf("5. Hello %c%%\n", 'j');
 	printf("-----------------------\n");
-	ft_printf("ft_printf:\n\n");
-	ft_printf("1. Hello %c.\n", '\0');
-	ft_printf("2. Hello %c.\n", 'c');
-	ft_printf("3. Hello %c %c.\n", 'c', 'x');
-	// ft_printf("4. Hello %c%\n", 'c');
-	ft_printf("5. Hello %c%%\n", 'j');
+	printf("-----------------------\n");
+	// printf("std printf:\n\n");
+	// printf("3. Hello %s.\n", "\0");
+	// printf("4. Hello %s.\n", "juan");
+	// printf("5. Hello %s %s.\n", "juan", "ramos");
+	// // printf("6. Hello %s%\n", "juan");
+	// printf("7. Hello %s%%\n", "juan");
+	// printf("-----------------------\n");
+	// ft_printf("ft_printf:\n\n");
+	// ft_printf("1. Hello\n");
+	// // seg. fault ft_printf("2. Hello %s.\n", 5);
+	// ft_printf("3. Hello %s.\n", "\0");
+	// ft_printf("4. Hello %s.\n", "juan");
+	// ft_printf("5. Hello %s %s.\n", "juan", "ramos");
+	// // ft_printf("6. Hello %s%\n", "juan");
+	// ft_printf("7. Hello %s%%\n", "juan");
+	// ft_printf("\n-----------------------\n\n");
+	// printf("Testing character input...\n");
+	// printf("-----------------------\n");
+	// printf("std printf:\n\n");
+	// printf("1. Hello %c.\n", '\0');
+	// printf("2. Hello %c.\n", 'c');
+	// printf("3. Hello %c %c.\n", 'c', 'x');
+	// // printf("4. Hello %c%\n", 'c');
+	// printf("5. Hello %c%%\n", 'j');
+	// printf("-----------------------\n");
+	// ft_printf("ft_printf:\n\n");
+	// ft_printf("1. Hello %c.\n", '\0');
+	// ft_printf("2. Hello %c.\n", 'c');
+	// ft_printf("3. Hello %c %c.\n", 'c', 'x');
+	// // ft_printf("4. Hello %c%\n", 'c');
+	// ft_printf("5. Hello %c%%\n", 'j');
 }
 */
 

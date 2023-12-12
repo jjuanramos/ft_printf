@@ -6,14 +6,14 @@
 /*   By: juramos <juramos@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/07 10:01:49 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/12 11:22:55 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/12 11:26:20 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "libft.h"
 
-size_t	putnbr_base_with_count_fd(unsigned long long n, char *base, int fd)
+size_t	putnbr_base_with_count_fd(unsigned long n, char *base, int fd)
 {
 	size_t	i;
 
@@ -23,7 +23,7 @@ size_t	putnbr_base_with_count_fd(unsigned long long n, char *base, int fd)
 		i += write(fd, "-", 1);
 		n *= -1;
 	}
-	if (n < (unsigned long long)ft_strlen(base))
+	if (n < (unsigned long)ft_strlen(base))
 		i += write(fd, &base[n], 1);
 	else
 	{

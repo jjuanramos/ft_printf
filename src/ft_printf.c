@@ -6,7 +6,7 @@
 /*   By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/21 11:01:54 by juramos           #+#    #+#             */
-/*   Updated: 2023/12/11 11:49:19 by juramos          ###   ########.fr       */
+/*   Updated: 2023/12/12 10:35:29 by juramos          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ int	main(void)
 	ft_printf("3. Hello %s.\n", "\0");
 	ft_printf("4. Hello %s.\n", "juan");
 	ft_printf("5. Hello %s %s.\n", "juan", "ramos");
-	// ft_printf("6. Hello %s%\n", "juan"); // is this expected behavior? -> fails with flags
+	// ft_printf("6. Hello %s%\n", "juan");
 	ft_printf("7. Hello %s%%\n", "juan");
 	ft_printf("\n-----------------------\n\n");
 	printf("Testing character input...\n");

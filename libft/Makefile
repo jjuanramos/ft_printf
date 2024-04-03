@@ -6,11 +6,12 @@
 #    By: juramos <juramos@student.42madrid.com>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/15 16:43:25 by juramos           #+#    #+#              #
-#    Updated: 2024/04/03 11:23:11 by juramos          ###   ########.fr        #
+#    Updated: 2024/04/03 13:35:35 by juramos          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
+B_NAME = libftbonus.a
 CC = gcc
 INCLUDE = ../include
 CFLAGS = -Wall -Werror -Wextra -I
@@ -44,12 +45,16 @@ WHITE = \033[0;97m
 
 all: $(NAME)
 
-bonus: $(OBJ) $(BONUS_OBJ)
-	@ar rc $(NAME) $?
+bonus: $(B_NAME)
 
 $(NAME): $(OBJ)
 	@ar rcs $(NAME) $?
 	@echo "$(YELLOW)libft compiled!$(DEF_COLOR)"
+
+$(B_NAME): $(BONUS_OBJ)
+	@ar rcs $(B_NAME) $?
+	@ar rcs $(NAME) $?
+	@echo "$(YELLOW)libft bonus compiled!$(DEF_COLOR)"
 
 %.o: %.c
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
@@ -58,7 +63,7 @@ clean:
 	@rm -f $(OBJ) $(BONUS_OBJ)
 
 fclean: clean
-	@rm -f $(NAME)
+	@rm -f $(NAME) $(B_NAME)
 
 re: fclean all
 
@@ -67,4 +72,3 @@ so:
 	@gcc -nostartfiles -shared -o libft.so $(OBJ)
 
 .PHONY: all clean fclean re bonus so
-
